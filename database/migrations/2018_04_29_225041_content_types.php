@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
+use App\Models\ContentType;
+
 class ContentTypes extends Migration
 {
     /**
@@ -18,6 +20,14 @@ class ContentTypes extends Migration
             $table->increments('id');
             $table->string('type', 128);
         });
+
+        $data = [
+            ['type'=>'text'],
+            ['type'=>'video'],
+            ['type'=>'reference']
+        ];
+
+        ContentType::insert($data);
     }
 
     /**

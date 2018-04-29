@@ -10,9 +10,8 @@
                 <div class="card-header">Content Writer</div>
                     {!! Form::open(['action' => 'ContentWriter@save']) !!}
                         @csrf
-                        <textarea></textarea>
+                        <textarea>@foreach($resource->contents as $content){{ $content->content }}@endforeach</textarea>
                     {!! Form::close() !!}
-
                 </div>
             </div>
         </div>

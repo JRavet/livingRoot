@@ -17,7 +17,14 @@ class ContentWriter extends Controller
      */
     public function index()
     {
-        return view('contentWriter/contentWriter');
+        // get resource & content
+        $resource = Resource::with('contents.type')->find(1);
+
+        $data = [
+            'resource' => $resource
+        ];
+
+        return view('contentWriter/contentWriter', $data);
     }
 
     public function save()

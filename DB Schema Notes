@@ -1,0 +1,41 @@
+REGULAR TABLES
+    Resource - transient data - e.g. author_id, publisher_id; third party and first party
+
+    Content - actual content, type, may contain meta data e.g. is_video, as well as position in resource
+
+    Reference - any reference to any content, stored as ^[1] wiki notation where applicable, as raw-text in content
+        - is a pivot table between content and content
+
+    Author
+        potential user_id
+
+    Publisher
+
+    Tag
+
+    User
+
+    User_Stats
+        time spent actively writing, time spent with app open, etc
+
+    Preferences
+
+    UserFavorites
+
+    Series
+        name
+
+PIVOT TABLES
+    resource_content - pivot table of above. One resource has many contents
+        (resource_id, content_id)
+
+    everything tag related
+
+    userpreference
+
+    tag_tags
+        - recursive tagging. Patience is a fruit of the Spirit, but fruit of the Spirit is not just patience
+        - only search off of the first tag_id, because causality does not imply causation
+
+    ResourceSeries
+        resource_id, series#, series_id

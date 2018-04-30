@@ -15,11 +15,6 @@
                     @endif
 
                     You are logged in!
-                    <ul>
-                        <li>
-                            <a href="{{ route('contentWriter') }}"> Start writing content! </a>
-                        </li>
-                    </ul>
                 </div>
             </div>
         </div>

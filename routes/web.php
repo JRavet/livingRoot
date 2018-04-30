@@ -11,6 +11,8 @@
 |
 */
 
+Route::pattern('resource_id', "[0-9]+");
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -21,7 +23,8 @@ Auth::routes();
 Route::group(['middleware'=>['auth']], function() {
     Route::get('/home', 'HomeController@index')->name('home');
     Route::group(['prefix' => '/contentWriter'], function() {
-        Route::get('/', 'ContentWriter@index')->name('contentWriter');
-        Route::get('/save', 'ContentWriter@save');
+        Route::get('/{resource_id}', 'ContentWriter@index')->name('contentWriter');
+        Route::post('/save/{resource_id}', 'ContentWriter@save')->name('contentWriterSave');
+        Route::post('/load/{resource_id}', 'ContentWriter@load')->name('contentWriterLoad');
     });
 });

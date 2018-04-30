@@ -72,4 +72,8 @@
         </main>
     </div>
 </body>
+<footer>
+    <script src="{{URL::asset('js/jquery-3.3.1.min.js')}}"></script>
+    @yield('javascript')
+</footer>
 </html>
